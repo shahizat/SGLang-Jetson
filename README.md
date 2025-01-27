@@ -69,12 +69,12 @@ Running Inference with FlashInfer Backend
 
 Launch the server:
 ```bash
-python -m sglang.launch_server\
-  --model-path deepseek-ai/DeepSeek-R1-Distill-Llama-8B\
-  --device cuda\
-  --dtype half\
-  --attention-backend flashinfer\
-  --mem-fraction-static 0.8\
+python -m sglang.launch_server \
+  --model-path deepseek-ai/DeepSeek-R1-Distill-Llama-8B \
+  --device cuda \
+  --dtype half \
+  --attention-backend flashinfer \
+  --mem-fraction-static 0.8 \
   --context-length 8192
 ```
 
@@ -157,11 +157,11 @@ Running Inference with Torch Native Backend
 
 Launch the server:
 ```bash
-python -m sglang.launch_server\
-      --model-path deepseek-ai/DeepSeek-R1-Distill-Llama-8B\
-      --device cuda\
-      --attention-backend torch_native\
-      --mem-fraction-static 0.8\
+python -m sglang.launch_server \
+      --model-path deepseek-ai/DeepSeek-R1-Distill-Llama-8B \
+      --device cuda \
+      --attention-backend torch_native \
+      --mem-fraction-static 0.8 \
       --context-length 8192
 ```
 Output
@@ -175,11 +175,11 @@ Running Inference with Triton Backend
 -------------------------------------
 Launch the server:
 ```bash
-python -m sglang.launch_server\
-      --model-path deepseek-ai/DeepSeek-R1-Distill-Llama-8B\
-      --device cuda\
-      --attention-backend triton\
-      --mem-fraction-static 0.8\
+python -m sglang.launch_server \
+      --model-path deepseek-ai/DeepSeek-R1-Distill-Llama-8B \
+      --device cuda \
+      --attention-backend triton \
+      --mem-fraction-static 0.8 \
       --context-length 8192
 ```
 Output
@@ -192,13 +192,13 @@ Running quantization with TorchAO
 -------------------------------------
 Launch the server with the best configuration:
 ```bash
-python -m sglang.launch_server\
-    --model-path meta-llama/Meta-Llama-3.1-8B-Instruct\
-    --device cuda\
-    --dtype bfloat16\
-    --attention-backend flashinfer\
-    --mem-fraction-static 0.8\
-    --context-length 8192\
+python -m sglang.launch_server \
+    --model-path meta-llama/Meta-Llama-3.1-8B-Instruct \
+    --device cuda \
+    --dtype bfloat16 \
+    --attention-backend flashinfer \
+    --mem-fraction-static 0.8 \
+    --context-length 8192 \
     --torchao-config int4wo-128 
 ```
 This enables TorchAO's int4 weight-only quantization with 128-group size. 
@@ -223,14 +223,14 @@ python3 -m pip install .
 ```
 Launch the server with XGrammar:
 ```bash 
-python -m sglang.launch_server\
-    --model-path meta-llama/Meta-Llama-3.1-8B-Instruct\
-    --device cuda\
-    --dtype bfloat16\
-    --attention-backend triton\
-    --mem-fraction-static 0.8\
-    --context-length 8192\
-    --torchao-config int4wo-128\
+python -m sglang.launch_server \
+    --model-path meta-llama/Meta-Llama-3.1-8B-Instruct \
+    --device cuda \
+    --dtype bfloat16 \
+    --attention-backend triton \
+    --mem-fraction-static 0.8 \
+    --context-length 8192 \
+    --torchao-config int4wo-128 \
     --grammar-backend xgrammar
 ```
 Run a structured output script:
